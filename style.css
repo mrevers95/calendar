@@ -1,7 +1,8 @@
-.container {
+.calendar {
     text-align: center;
     width: 210px;
-    padding: 5px 0px;
+    position: absolute;
+    padding: 5px 0;
 }
 
 th, td {
@@ -14,8 +15,18 @@ th {
 
 td {
     width: 30px;
+    cursor: default;
 }
 
-td:hover {
+td.day:hover {
     background-color: #ccffff;
+}
+
+.nav-left, .nav-right {
+    font-weight: normal;
+    cursor: default;
+}
+
+.nav-left:hover, .nav-right:hover {
+    color: #ccffff;
 }
