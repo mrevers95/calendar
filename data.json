@@ -1,0 +1,30 @@
+{
+    "2016": {
+        "months": [
+            {
+                "days": 31,
+                "offset": 4
+            }
+        ]
+    },
+    "2017": {
+        "months": [
+            {
+                "days": 31,
+                "offset": 0
+            },
+            {
+                "days": 28,
+                "offset": 3
+            },
+            {
+                "days": 31,
+                "offset": 3
+            },
+            {
+                "days": "29",
+                "offset": "6"
+            }
+        ]
+    }
+}

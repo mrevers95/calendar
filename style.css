@@ -1,0 +1,21 @@
+.container {
+    text-align: center;
+    width: 210px;
+    padding: 5px 0px;
+}
+
+th, td {
+    height: 23px;
+}
+
+th {
+    font-weight: 700;
+}
+
+td {
+    width: 30px;
+}
+
+td:hover {
+    background-color: #ccffff;
+}
