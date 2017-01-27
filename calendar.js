@@ -8,21 +8,25 @@ var DAYS_IN_WEEK = 7;
 
 $(document).ready(function() {
     var date = new Date();
-    var curr = date.getMonth();
-    generateCalendarModel(curr);
+    var currMonth = date.getMonth();
+    generateCalendarModel(currMonth);
     
     $('.nav-left').click(function() {
-        if (curr - 1 >= 0) {
-            curr = curr - 1;
-            generateCalendarModel(curr);
+        if (currMonth - 1 >= 0) {
+            currMonth = currMonth - 1;
+            generateCalendarModel(currMonth);
         }
     });
     
     $('.nav-right').click(function() {
-        if (curr + 1 < 12) {
-            curr = curr + 1;
-            generateCalendarModel(curr);
+        if (currMonth + 1 < 12) {
+            currMonth = currMonth + 1;
+            generateCalendarModel(currMonth);
         }
+    });
+    
+    $(".day").click(function(event) {
+        $('.current-date').html(currMonth+1 + '/' + this.innerHTML + '/2017');
     });
 });
 
