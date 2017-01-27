@@ -25,7 +25,9 @@ $(document).ready(function() {
         }
     });
     
-    $(".day").click(function(event) {
+    $('body').on('click', '.day', function(event) {
+        $('.day').removeClass('selected');
+        $(this).addClass('selected');
         $('.current-date').html(currMonth+1 + '/' + this.innerHTML + '/2017');
     });
 });
