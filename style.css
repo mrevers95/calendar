@@ -3,11 +3,19 @@ body {
 }
 
 .calendar {
+    background: white;
     text-align: center;
     width: 210px;
+    height: 188px;
     position: absolute;
+    padding-top: 5px;
     border: 1px solid rgba(100, 100, 100, .4);
+    border-top: none;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+}
+
+.shifted {
+    margin-left: 106px;
 }
 
 th, td {
@@ -36,21 +44,47 @@ td.day:hover {
     color: #ccffff;
 }
 
-.selected {
-    background-color: #ffffb3;
+.dates {
+    display: flex;
 }
 
-.current-date {
+.current-date, .next-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: white;
-    width: 65px;
-    position: fixed;
-    margin-top: 185px;
+    width: 104.5px;
+    height: 32px;
     cursor: default;
     border: 1px solid rgba(100, 100, 100, .4);
-    padding:10px;
-    box-shadow: 0 2px 0px rgba(0, 0, 0, .25);
 }
 
-.nav {
-    background-color: rgba(50, 50, 50, .1);
+.next-date {
+  border-left: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.selected {
+    background: rgb(240, 240, 240);
+}
+
+.checkin {
+    background: rgb(230, 230, 230);
+}
+
+.checkout {
+    background: rgb(200, 200, 200);
+}
+
+.close {
+    cursor: default;
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+.close:hover {
+    color: #ccffff;
 }

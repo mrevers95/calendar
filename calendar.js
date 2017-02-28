@@ -24,11 +24,41 @@ $(document).ready(function() {
             generateCalendarModel(currMonth);
         }
     });
+  
+    $('.dates').click(function() {
+        $('.calendar').removeClass('hidden');
+    });
+  
+    $('.current-date').click(function() {
+        $('.next-date').removeClass('selected');
+        $('.current-date').addClass('selected');
+        $('.calendar').removeClass('shifted');
+    });
+  
+    $('.next-date').click(function() {
+        $('.current-date').removeClass('selected');
+        $('.next-date').addClass('selected');
+        $('.calendar').addClass('shifted');
+    });
     
     $('body').on('click', '.day', function(event) {
-        $('.day').removeClass('selected');
-        $(this).addClass('selected');
-        $('.current-date').html(currMonth+1 + '/' + this.innerHTML + '/2017');
+        if ($('.current-date').hasClass('selected')) {
+            $('.day').removeClass('checkin');
+            $(this).addClass('checkin');
+            $('.current-date').html(currMonth+1 + '/' + this.innerHTML + '/2017');
+            $('.current-date').removeClass('selected');
+            $('.next-date').addClass('selected');
+            $('.calendar').addClass('shifted');
+        }
+        else {
+            $('.day').removeClass('checkout');
+            $(this).addClass('checkout');
+            $('.next-date').html(currMonth+1 + '/' + this.innerHTML + '/2017');
+        }
+    });
+  
+    $('.close').click(function() {
+        $('.calendar').addClass('hidden');
     });
 });
 
